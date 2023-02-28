@@ -1,0 +1,229 @@
+:root {
+    --primary: #001f3f;
+    --secondary: #e0e0e0;
+}
+
+* {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    background: var(--secondary);
+    -webkit-tap-highlight-color: transparent;
+}
+
+body,
+html,
+input {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100VW;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.container {
+    width: 100%;
+    height: 80%;
+    max-width: 30rem;
+    margin: 1rem;
+    background: var(--secondary);
+    border-radius: 10px;
+    box-shadow: inset 9px 9px 19px #bebebe, inset -9px -9px 19px #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container header {
+    width: 100%;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary);
+    padding: .8rem 1.3rem;
+}
+
+.container .chat-body {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+
+.container .chat-body sender {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.container .chat-body sender balloon:first-child {
+    border-radius: 10px 10px 10px 0;
+}
+
+.container .chat-body sender balloon:first-child::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-right: 15px solid transparent;
+    border-top: 15px solid var(--secondary);
+    border-top-right-radius: 4px;
+    right: -0.8rem;
+    top: 0;
+}
+
+
+.container .chat-body receiver {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container .chat-body receiver balloon:first-child {
+    border-radius: 0 10px 10px;
+}
+
+.container .chat-body receiver balloon:first-child::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid var(--secondary);
+    border-top-left-radius: 4px;
+    left: -0.8rem;
+    top: 0;
+}
+
+
+.container .chat-body sender,
+.container .chat-body receiver {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.container .chat-body sender balloon,
+.container .chat-body receiver balloon {
+    width: 80%;
+    border-radius: 10px;
+    padding: .5rem 1rem;
+    background: var(--secondary);
+    box-shadow: 9px 9px 19px #bebebe, -9px -9px 19px #ffffff;
+    font-size: .8rem;
+    position: relative;
+    display: block;
+    margin-bottom: .3rem;
+}
+
+.container .chat-body sender balloon:before,
+.container .chat-body receiver balloon:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    background: var(--secondary);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.container .chat-body sender balloon span,
+.container .chat-body receiver balloon span {
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+
+.container .chat-body sender balloon p,
+.container .chat-body receiver balloon p {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
+
+
+.container footer {
+    width: 100%;
+    height: 5rem;
+}
+
+.container footer form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.container footer input {
+    width: 100%;
+    padding: .65rem 1.1rem;
+    border-radius: 1.5rem;
+    background: var(--secondary);
+    box-shadow: 9px 9px 19px #bebebe, -9px -9px 19px #ffffff;
+    outline: none;
+    border: 0;
+    color: #333;
+    font-weight: 300;
+    font-size: .8rem;
+}
+
+.container footer button {
+    width: 2.8rem;
+    height: 2.5rem;
+    background: var(--secondary);
+    border-radius: 1.5rem;
+    box-shadow: 9px 9px 19px #bebebe, -9px -9px 19px #ffffff;
+    outline: none;
+    border: 0;
+    margin-left: .5rem;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.container footer button:hover {
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow: 9px 9px 19px #bebebe, -9px -9px 19px #ffffff;
+}
+
+.container footer button:active {
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow: 9px 9px 19px #bebebe, -9px -9px 19px #ffffff;
+}
+
+@media(max-height: 665px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .container {
+        height: 93%;
+    }
+}
