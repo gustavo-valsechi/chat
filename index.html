@@ -17,45 +17,43 @@
 
 <body>
     <section class="container">
-        <header>Atendimento online</header>
-        <div class="chat-body">
-            <sender>
-                <balloon>
-                    <span>Você</span>
-                    <p>Olá, gostaria de pedir um hamburguer com duas carnes e cheddar</p>
-                </balloon>
-            </sender>
-            <receiver>
+        <header>
+            <avatar><i class="fa-solid fa-headset"></i></avatar>
+            <div class="header-content">
+                <p>Atendimento</p>
+                <p>online</p>
+            </div>
+        </header>
+        <div id="chat-body">
+            <div id="typing" class="typing">
+                <div class="loading">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                digitando
+            </div>
+            <attendant>
                 <balloon>
                     <span>Atendente</span>
-                    <p>Olá, tudo bem?</p>
+                    <p>Olá, o que você gostaria de pedir?</p>
                 </balloon>
                 <balloon>
-                    <p>Ok, pedido anotado 👍</p>
+                    <p>Se enviar em uma mensagem só, o atendimento vai se mais rápido.</p>
                 </balloon>
-                <balloon>
-                    <p>Gostaria de uma maionese caseira para acompanhar?</p>
-                </balloon>
-            </receiver>
-            <sender>
-                <balloon>
-                    <span>Você</span>
-                    <p>Gostaria sim 😋</p>
-                </balloon>
-                <balloon>
-                    <p>E adiciona mais uma coca lata!</p>
-                </balloon>
-            </sender>
+            </attendant>
         </div>
         <footer>
             <form>
-                <input placeholder="Mensagem">
-                <button>
+                <input id="message" name="message" placeholder="Mensagem" autocomplete="off">
+                <button type="submit">
                     <i class="fa-solid fa-paper-plane"></i>
                 </button>
             </form>
         </footer>
     </section>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
