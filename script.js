@@ -1,8 +1,27 @@
 const chat_bot = document.getElementById('chat-body')
-const typing = document.getElementById('typing')
 
 const form_message = document.querySelector('form')
 const message_input = document.getElementById('message')
+
+const toggleTyping = () => {
+
+    const content = `
+        <div id="typing">
+            <div class="loading">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            digitando
+        </div>
+    `
+
+    if (chat_bot.innerHTML.includes(content)) {
+        return chat_bot.innerHTML = chat_bot.innerHTML.replace(content, '')
+    }
+
+    return chat_bot.innerHTML = content + chat_bot.innerHTML
+}
 
 const setAttendantBalloon = (messages) => {
     messages.forEach((message, index) => {
@@ -48,13 +67,13 @@ const setSenderBalloon = () => {
 
 const attendantResponse = () => {
 
-    typing.classList.add('show')
+    setTimeout(() => toggleTyping(), 2000)
 
     const attendant_responses = document.querySelectorAll('attendant')
 
     setTimeout(() => {   
 
-        typing.classList.remove('show')
+        toggleTyping()
 
         switch (attendant_responses.length) {
             case 1:

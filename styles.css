@@ -128,27 +128,23 @@ body::-webkit-scrollbar-thumb {
     position: relative;
 }
 
-.container #chat-body .typing {
+.container #chat-body #typing {
     position: absolute;
     bottom: 0;
     left: 1.5rem;
+    display: flex;
     align-items: center;
     font-size: .7rem;
     color: rgb(0, 0, 0, 0.6);
-    display: none;
 }
 
-.container #chat-body .typing.show {
-    display: flex;
-}
-
-.container #chat-body .typing .loading {
+.container #chat-body #typing .loading {
     display: flex;
     align-items: center;
     margin-right: .3rem;
 }
 
-.container #chat-body .typing .loading div {
+.container #chat-body #typing .loading div {
     width: .3rem;
     height: .3rem;
     border-radius: .3rem;
@@ -156,15 +152,15 @@ body::-webkit-scrollbar-thumb {
     margin-right: .2rem;
 }
 
-.container #chat-body .typing .loading div:first-child {
+.container #chat-body #typing .loading div:first-child {
     animation: typingFirst infinite ease 2s;
 }
 
-.container #chat-body .typing .loading div:nth-child(2) {
+.container #chat-body #typing .loading div:nth-child(2) {
     animation: typingSecond infinite ease 2s;
 }
 
-.container #chat-body .typing .loading div:last-child {
+.container #chat-body #typing .loading div:last-child {
     animation: typingThird infinite ease 2s;
 }
 
