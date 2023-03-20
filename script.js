@@ -84,17 +84,13 @@ const attendantResponse = () => {
                 break
             case 2:
                 setAttendantBalloon([
-                    'Certo, batata adicionada entao!',
+                    'Certo, adicionamos no pedido',
                     'Para beber não vai querer nada?'
                 ])
                 break
             case 3:
                 setAttendantBalloon([
-                    'Anotado!'
-                ])
-                break
-            case 4:
-                setAttendantBalloon([
+                    'Anotado!',
                     'Qual seu endereço para entrega?'
                 ])
                 break
@@ -105,6 +101,8 @@ const attendantResponse = () => {
                 ])
                 break
         }
+
+        chat_bot.scrollTop = chat_bot.scrollHeight - chat_bot.offsetHeight
     }, 10000)
 }
 
